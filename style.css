@@ -1,49 +1,250 @@
-body{
-    background-color: rgba(245, 245, 245, 0.901);
-    margin: 0px;
-    font-family:Arial, Helvetica, sans-serif;
+/*This CSS is AI Enhanced*/
+* {
+    box-sizing: border-box;
 }
-#header {
-    background-color: rgb(231, 79, 24,0.902);
+
+body {
+    margin: 0px;
+    font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+    padding-bottom: 70px;
+    /* keeps content clear of fixed footer */
+}
+
+.lightMode {
+    /*Added by me*/
+    background: linear-gradient(160deg, #eef2f7 0%, #dde7f0 100%);
+}
+
+.darkMode {
+    /*Added by me*/
+    background: linear-gradient(160deg, #1a1d3a 0%, #0c0e1a 100%);
+}
+
+header {
+    background-color: #3a6df0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
     width: 100%;
-    height: 80px;
-    margin-top: none;
-    color:whitesmoke;
+    height: auto;
+    color: whitesmoke;
+    font-size: 2.5em;
+    padding: 15px 30px;
+}
+
+footer {
+    background-color: #3a6df0;
+    color: whitesmoke;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 0;
+    font-size: 1rem;
+}
+
+footer a {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+#input {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+#inputCity {
+    border: none;
+    border-radius: 50px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    font-size: 1.3rem;
+    padding: 15px 20px;
+    background-color: #ffffff;
+}
+
+#inputCity:focus {
+    outline: 2px solid #3a6df0;
+}
+
+#searchButton {
+    border: none;
+    border-radius: 50px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.15);
+    font-size: 1.3rem;
+    padding: 15px 30px;
+    color: whitesmoke;
+    background-color: #3a6df0;
+    cursor: pointer;
+}
+
+#searchButton:hover {
+    background-color: #2f57c2;
+}
+
+#searchButton:active {
+    background-color: #24449a;
+}
+
+#themeButton {
+    border: none;
+    border-radius: 50px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.15);
+    font-size: 1rem;
+    padding: 12px 20px;
+    color: #222;
+    background-color: #f2f2f2;
+    cursor: pointer;
+}
+
+#themeButton:hover {
+    background-color: #e0e0e0;
+}
+
+#output {
+    display: flex;
+    background: #ffffff;
+    flex-direction: column;
+    align-items: center;
+    margin: 40px auto 0;
+    max-width: 500px;
+    width: 90%;
+    border-radius: 30px;
+    border: none;
+    padding: 30px 20px;
+    box-shadow: 0px 15px 35px rgba(58, 109, 240, 0.15);
+    display: none;
+}
+
+h2 {
+    font-size: 3.2rem;
+    margin: 10px 0;
+    color: #1c1c1c;
+}
+
+h5 {
+    font-size: 1.4rem;
+    margin: 8px 0;
+    color: #555;
+    font-weight: 500;
+}
+
+#whetherEmoji {
+    font-size: 3rem;
+}
+
+#error {
+    color: #d9534f;
+    font-size: 1rem;
+}
+
+/*
+Written by me
+
+body {
+    background-color: rgba(237, 191, 150, 0.901);
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    background-color: rgb(231, 79, 24, 0.902);
+    text-shadow: 1px 1px 3px rgb(194, 194, 194);
+    width: 100%;
+    height: auto;
+    color: whitesmoke;
     font-size: 4em;
     padding-left: 30px;
 }
-#inputCity{
-    border:none;
-    border-radius: 50px;
-    box-shadow: 2px 2px rgba(43, 41, 40, 0.904);
-    margin-left: 25%;
-    margin-top: 2%;
-    font-size: 2rem;
-    padding: 15px;
+
+footer {
+    background-color: rgba(235, 230, 230, 0.901);
+    width: 100%;
+    height: auto;
+    position: fixed;
+    bottom: 0;
 }
 
-#searchButton{
-    border:none;
+#input {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#inputCity {
+    border: none;
     border-radius: 50px;
-    box-shadow: 2px 2px rgba(168, 106, 75, 0.904);
-    margin-left: 15px;
-    margin-top: 2%;
+    box-shadow: 2px 2px 5px rgba(43, 41, 40, 0.904);
+    font-size: 2rem;
+    padding: 15px;
+    background-color: hsl(0, 0%, 95%);
+}
+
+#searchButton {
+    border: none;
+    border-radius: 50px;
+    box-shadow: 2px 2px 3px rgba(168, 106, 75, 0.904);
     font-size: 2rem;
     padding: 15px;
     color: whitesmoke;
     background-color: rgba(231, 79, 24, 0.902);
     cursor: pointer;
+    margin-left: 20px;
 }
-#searchButton:hover{
-    background-color: rgba(231, 79, 24, 0.743);;
+
+#searchButton:hover {
+    background-color: rgba(231, 79, 24, 0.743);
+    ;
 }
-#searchButton:active{
+
+#searchButton:active {
     background-color: rgba(212, 62, 8, 0.902);
 }
-#footer{
-    background-color: rgb(202, 202, 202);
-    width: 100%;
-    height: 80px;
-    position:fixed;
-    bottom: 0;
+
+#themeButton {
+    border: none;
+    border-radius: 50px;
+    box-shadow: 2px 2px 3px rgba(168, 106, 75, 0.904);
+    font-size: 1rem;
+    padding: 15px;
+    color: rgb(0, 0, 0);
+    background-color: rgba(219, 218, 218, 0.902);
+    cursor: pointer;
+    align-items: end;
 }
+
+#output {
+    display: flex;
+    background: linear-gradient(180deg, rgb(243, 185, 10), rgb(97, 87, 171));
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 350px;
+    margin-right: 350px;
+    border-radius: 40px;
+    border: none;
+    box-shadow: 20px 20px 30px rgba(168, 106, 75, 0.904);
+}
+h2{
+    font-size: 70px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+h5{
+    font-size: 30px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    color: rgb(41, 41, 41);
+}*/
