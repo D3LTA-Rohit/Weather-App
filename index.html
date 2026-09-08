@@ -1,18 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather</title>
+    <title>⛅Weather</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a6f5f28027.js" crossorigin="anonymous"></script>
 </head>
-<body>
-    <div id="header">⛅Weather App</div>
-    <div id="input">
-        <input type="text" id="inputCity" placeholder="🔍Enter your city">
-        <button for="inputCity" id="searchButton">Search</button>
-    </div>
-    <div id="footer"></div>
+
+<body class="lightMode">
+    <header>⛅Weather
+        <button id="themeButton" onclick="changeTheme()">Dark Mode</button>
+    </header>
+
+    <main>
+        <div id="input">
+            <input type="text" id="inputCity" placeholder="🔍Enter your city">
+            <button id="searchButton">Search</button>
+        </div>
+
+        <div id="output">
+            <h2 id="city"></h2>
+            <h5 id="temperature"></h5>
+            <h5 id="humidity"></h5>
+            <h5 id="description"></h5>
+            <h5 id="whetherEmoji"></h5>
+            <h5 id="error"></h5>
+        </div>
+    </main>
+
+    <footer>
+        <i class="fa-brands fa-github"></i>
+        <a href="https://github.com/D3LTA-Rohit" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </footer>
+
     <script src="index.js"></script>
 </body>
+
 </html>
