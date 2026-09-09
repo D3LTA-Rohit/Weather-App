@@ -41,13 +41,13 @@ async function main() {
     if (!city) {
         displayError("Please enter a city!!");
     } else {
-        
+
         try {
             const weatherData = await getWeatherData(city);
             displayWeatherData(weatherData);
         } catch (error) {
             console.error(error);
-            displayError(error);
+            displayError("Enter a valid city");
         }
     }
 }
@@ -63,11 +63,59 @@ async function getWeatherData(city) {
 }
 
 function displayWeatherData(data) {
+    const { name: city,
+        main: { temp, humidity },
+        weather: [{ description, id }] } = data; //object destructuring
 
+    const cityDisplay = document.createElement("h2");
+    const tempDisplay = document.createElement("h5");
+    const humidityDisplay = document.createElement("h5");
+    const descriptionDisplay = document.createElement("h5");
+    const emojiDisplay = document.createElement("h5");
+
+    output.textContent = ""; //clear the previous output
+
+    cityDisplay.textContent = city;
+    tempDisplay.textContent = `${(temp - 273.15).toFixed(2)}°C`;
+    humidityDisplay.textContent = `Humidity: ${humidity}%`;
+    descriptionDisplay.textContent = description;
+    emojiDisplay.textContent = getWeatherEmoji(id);
+    emojiDisplay.classList.add("weatherEmoji");
+
+    output.appendChild(cityDisplay);
+    output.appendChild(tempDisplay);
+    output.appendChild(humidityDisplay);
+    output.appendChild(descriptionDisplay);
+    output.appendChild(emojiDisplay);
+
+    output.style.display = "flex";
 }
 
 function getWeatherEmoji(weatherID) {
+    switch (true) {
+        case (weatherID >= 200 && weatherID < 300):
+            return "🌩️"; //Thunderstorm
 
+        case (weatherID >= 300 && weatherID < 400):
+            return "🌦️"; //Drizzle
+
+        case (weatherID >= 500 && weatherID < 600):
+            return "🌧️"; //Rain
+
+        case (weatherID >= 600 && weatherID < 700):
+            return "❄️"; //Snow
+
+        case (weatherID >= 700 && weatherID < 800):
+            return "🌀"; //Atmosphere
+
+        case (weatherID === 800):
+            return "☀️"; //Clear Sky
+
+        case (weatherID >= 801 && weatherID < 810):
+            return "☁️"; //clouds
+
+        default: return "🛸";
+    }
 }
 
 function displayError(message) {
@@ -75,7 +123,7 @@ function displayError(message) {
     error.textContent = message; //text content changed
     error.classList.add("error"); //.error class added, so styling can be applied acc. to CSS
 
-    //output.textContent = "";
+    output.textContent = ""; //clear the previous output
     output.appendChild(error);
     output.style.display = "flex";
 }
