@@ -141,13 +141,13 @@ h5 {
     font-weight: 500;
 }
 
-#whetherEmoji {
+.weatherEmoji {
     font-size: 3rem;
 }
 
-#error {
+.error {
     color: #d9534f;
-    font-size: 1rem;
+    font-size: 1.4rem;
 }
 
 /*
