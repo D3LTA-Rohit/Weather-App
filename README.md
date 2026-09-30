@@ -8,6 +8,12 @@ This is a very small and simple frontend project that i am making just after lea
     <li>The fetched data will be displayed on the webpage by destructuring the JSON object.</li>
 </ol>
 
+<h3>Screenshots</h3>
+<img src="ScreenShots/home.png">
+<img src="ScreenShots/search.png">
+<img src="ScreenShots/darkMode.png">
+<img src="ScreenShots/error.png">
+
 <h4>Note: </h4> If you are using OpenWeather API first make an account and there is a limited number of API calls in free version.
 
 <h3>Course: BroCode JavaScript Course</h3>
